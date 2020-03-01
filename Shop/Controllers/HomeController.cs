@@ -22,5 +22,9 @@ namespace Shop.Controllers
             obj.favBooks = _ibooks.GetFavBooks;
             return View(obj);
         }
+        public ViewResult Contacts()
+        {
+            return View();
+        }
     }
 }
