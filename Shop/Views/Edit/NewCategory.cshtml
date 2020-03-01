@@ -1,0 +1,25 @@
+﻿@model BooksCategory
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="NewCategory" asp-controller="Edit">
+            <div class="form-group">
+                <label class="control-label">Категории</label>
+                <input class="form-control" type="text" value="" asp-for="name" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Описание</label>
+                <input class="form-control" type="text" value="" asp-for="desc" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.desc" data-valmsg-replace="true"></span>
+            </div>
+            @*<div class="form-group">
+            <label class="control-label" for="Image">Image</label>
+            <input type="file" class="form-control-file">
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model BooksWriter
+
+    <form  asp-controller="Edit" asp-action="Save" method="post">
+        <div class="row">
+
+            <div class="form-group">
+                <label class="control-label">Писатель</label>
+                <input class="form-control" type="text" value="@Model.name" asp-for="name" />
+                <input class="form-control" type="hidden"  asp-for="id" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.name" data-valmsg-replace="true"></span>
+                <p></p>
+
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+
+        </div>
+    </form>

@@ -1,0 +1,51 @@
+﻿@model OrderListViewsModels
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    № заказа
+                </th>
+                <th>
+                    Дата
+                </th>
+                <th>
+                    Имя
+                </th>
+                <th>
+                    Телефон
+                </th>
+                <th>
+                    Адрес
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var el in Model.allOrder)
+            {
+            <tr>
+                <th>
+                    @el.id
+                </th>
+                <th>
+                    @el.dateTime
+                </th>
+                <th>
+                    @el.name
+                </th>
+                <th>
+                    @el.phone
+                </th>
+                <th>
+                    @el.adress
+                </th>
+
+            </tr>
+
+            }
+
+</tbody>
+</table>

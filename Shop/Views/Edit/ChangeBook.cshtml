@@ -1,0 +1,71 @@
+﻿@model Book
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-controller="Edit" asp-action="SaveBook" method="post">
+                <div class="form-group">
+                    <label class="control-label">Книги</label>
+                    <input class="form-control" type="text" value="@Model.name" asp-for="name" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.name" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Описание краткое</label>
+                    <input class="form-control" type="text" value="@Model.shortDesc" asp-for="shortDesc" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.shortDesc" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Длинное краткое</label>
+                    <input class="form-control" type="text" value="@Model.longDesc" asp-for="longDesc" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.longDesc" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Цена</label>
+                    <input class="form-control" type="text" value="@Model.price" asp-for="price" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.price" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Главная страница</label>
+                    <input class="form-control" type="text" value="@Model.isFavourite" asp-for="isFavourite" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.isFavourite" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Доступность</label>
+                    <input class="form-control" type="text" value="@Model.available" asp-for="available" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.available" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Категория</label>
+                    <input class="form-control" type="text" value="@Model.categoryId" asp-for="categoryId" />
+                    <input class="form-control" type="hidden" asp-for="id" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="@Model.categoryId" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Писатель</label>
+                    <div class="form-group">
+                        <label asp-for="@Model.writerId" class="control-label"></label>
+                        <select asp-for="@Model.writerId" class="form-control" asp-items="ViewBag.UnicornGroupId"></select>
+                    </div>
+                </div>
+
+
+                @*<div class="form-group">
+                    <label class="control-label">Категория</label>
+                    <label asp-for="Category.id" class="control-label"></label>
+                    <select asp-for="Category.id" class="form-control" asp-items="ViewBag.Category.id"></select>
+                </div>*@
+
+
+                <div class="form-group">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+        </div>

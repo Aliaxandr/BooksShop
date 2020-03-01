@@ -1,0 +1,30 @@
+﻿@model OneBookViewsModels
+
+<div class="row mt-5 mb-2 ">
+
+    <div class="col-lg-4">
+        <p><img class="img-thumbnail" src="@Model.img" alt=""></p>
+    </div>
+    <div class="col-md-8 col-md-offset-4">
+        <h3>@Model.WriterName</h3>
+        <p><h4>@Model.name</h4></p>
+        <p>@Model.longDesc</p>
+        <div class="card-subtitle badge">
+            <p>Цена: @Model.price.ToString("c")</p>
+        </div>
+        @*<a class="btn btn-primary">
+            <i class="fa fa-shopping-cart nav-color"></i> В корзину
+        </a>*@
+        <a class="btn btn-primary" asp-controller="ShopCart" asp-action="AddToCart"
+           asp-route-id="@Model.id"
+           asp-route-returnUrl="@ViewContext.HttpContext.Request.Path">
+            <i class="fa fa-shopping-cart nav-color"></i> В корзину
+        </a>
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+﻿@model BooksCategoryViewsModel
+
+<h1>Категории</h1>
+<a class="btn btn-info" asp-action="NewCategory" asp-controller="Edit">Добавить</a>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Название категории</th>
+            <th>Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var el in Model.allBooksCategory)
+        {
+        <tr>
+            <th>@el.id</th>
+            <th>@el.name</th>
+            <th>@el.desc</th>
+            <td>
+                <a class="btn btn-success" asp-action="ChangeCategory"
+                   asp-route-id="@el.id"><i class="fa fa-edit"></i></a>
+                <a class="btn btn-outline-danger" asp-action="DeleteCategory"
+                   asp-route-id="@el.id"><i class="fa fa-close"></i></a>
+            </td>
+            
+        </tr>
+
+
+        }
+    </tbody>
+</table>

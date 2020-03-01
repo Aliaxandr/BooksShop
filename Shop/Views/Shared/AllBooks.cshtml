@@ -1,0 +1,17 @@
+﻿@model Book
+
+    <div class="col-lg-4">
+        <img class="img-thumbnail" src="@Model.img" alt="" />
+        <h2>@Model.name</h2>
+        <p>Автор: @Model.WriterName</p>
+        <p>@Model.shortDesc</p>
+        <div class="card-subtitle badge">
+            <p>Цена: @Model.price.ToString("c")</p>
+        </div>
+        <a class="btn btn-primary" asp-controller="ShopCart" asp-action="AddToCart"
+           asp-route-id="@Model.id"
+               asp-route-returnUrl="@ViewContext.HttpContext.Request.Path">
+        <i class="fa fa-shopping-cart nav-color"  ></i> В корзину</a>        
+        <p><a>@Html.ActionLink("Подробнее >>", "AllInfo", "Books", new { id = Model.id })</a></p>
+    </div>
+    

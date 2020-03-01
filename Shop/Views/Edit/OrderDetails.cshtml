@@ -1,0 +1,87 @@
+﻿@model OrderDetailsViewModels
+
+ 
+        <h3>Новые заказы</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№ заказа</th>
+                    <th>Дата</th>
+                    <th>Имя</th>
+                    <th>Телефон</th>
+                    <th>Адрес</th>
+                    <th>Книга</th>
+                    <th>Цена</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var el in Model.getNewOrder)
+                {
+                    <tr>
+                        <th>@el.id</th>
+                        <th>@el.order.id</th>
+                        <th>@el.order.dateTime</th>
+                        <th>@el.order.name</th>
+                        <th>@el.order.phone</th>
+                        <th>@el.order.adress</th>
+                        <th>@el.book.name</th>
+                        <th>@el.book.price</th>
+                        <th>
+                            <a class="btn btn-outline-danger" asp-action="DeleteOrder" asp-controller="Edit"
+                               asp-route-id="@el.id" asp-route-orderid="@el.order.id"><i class="fa fa-close"></i></a>
+                        </th>
+                        <th>
+                            <a class="btn btn-primary" asp-controller="Edit" asp-action="OrderOk"
+                               asp-route-id="@el.id" asp-route-orderid="@el.order.id" asp-route-price="@el.book.price">                              
+                               Завершить
+                            </a>
+                        </th>
+
+                    </tr>
+
+                }
+
+
+            </tbody>
+        </table>
+
+        <h3>Все заказы</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№ заказа</th>
+                    <th>Дата</th>
+                    <th>Имя</th>
+                    <th>Телефон</th>
+                    <th>Адрес</th>
+                    <th>Книга</th>
+                    <th>Цена</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var el in Model.allOrderDetails)
+                {
+                    <tr>
+                        <th>@el.id</th>
+                        <th>@el.order.id</th>
+                        <th>@el.order.dateTime</th>
+                        <th>@el.order.name</th>
+                        <th>@el.order.phone</th>
+                        <th>@el.order.adress</th>
+                        <th>@el.book.name</th>
+                        <th>@el.book.price</th>
+                        <th>
+                            <a class="btn btn-outline-danger" asp-action="DeleteOrder" asp-controller="Edit"
+                               asp-route-id="@el.id" asp-route-orderid="@el.order.id"><i class="fa fa-close"></i></a>
+                        </th>
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>

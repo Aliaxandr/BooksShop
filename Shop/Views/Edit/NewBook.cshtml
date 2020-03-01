@@ -1,0 +1,64 @@
+﻿@model Book
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="NewBook" asp-controller="Edit">
+            <div class="form-group">
+                <label class="control-label">Книги</label>
+                <input class="form-control" type="text" value="" asp-for="name" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Описание краткое</label>
+                <input class="form-control" type="text" value="" asp-for="shortDesc" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.shortDesc" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Длинное краткое</label>
+                <input class="form-control" type="text" value="" asp-for="longDesc" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.longDesc" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Цена</label>
+                <input class="form-control" type="text" value="" asp-for="price" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.price" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Главная страница</label>
+                <input class="form-control" type="text" value="" asp-for="isFavourite" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.isFavourite" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Доступность</label>
+                <input class="form-control" type="text" value="" asp-for="available" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.available" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Категория</label>
+                <input class="form-control" type="text" value="" asp-for="categoryId" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.categoryId" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Писатель</label>
+                <input class="form-control" type="text" value="" asp-for="writerId" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="@Model.writerId" data-valmsg-replace="true"></span>
+            </div>
+
+
+            @*<div class="form-group">
+            <label class="control-label">Категория</label>
+            <label asp-for="Category.id" class="control-label"></label>
+            <select asp-for="Category.id" class="form-control" asp-items="ViewBag.Category.id"></select>
+        </div>*@
+
+            <div class="form-group">
+                <label asp-for="img" class="control-label"></label>
+                <input type="file" asp-for="img" class="form-control-file">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

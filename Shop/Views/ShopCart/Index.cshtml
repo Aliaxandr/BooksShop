@@ -1,0 +1,44 @@
+﻿@model ShopCartViewsModels
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Навзание книги
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.shopCart.shopCartItems)
+        {
+        <tr>
+            <th>
+                <label>@book.name</label>
+            </th>
+            <th>
+                @*@book.quantity*@
+                @Html.DisplayFor(modelItem => book.quantity)
+            </th>
+            <th>
+                @book.price
+            </th>
+            <td>
+                <a class="btn btn-outline-danger" asp-action="Delete"
+                   asp-route-id="@book.id"><i class="fa fa-close"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    </table>
+<h4>Итого: @Model.sum</h4>
+<p></p>
+<a class="btn btn-primary" asp-controller="Order" asp-action="Forma">Оформить заказ</a>
+<p></p>
+

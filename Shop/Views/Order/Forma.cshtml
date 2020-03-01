@@ -1,0 +1,39 @@
+﻿@model Order
+
+<p></p>
+    <h5>Оформление заказа</h5>
+<p></p>
+    <div class="row">
+        <form asp-action="Forma" method="post" class="list-group-horizontal">
+            <div class="form-group">
+                <label>Имя</label>
+                <div class="col-12">
+                    <input asp-for="name" class="form-control" />
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Номер телефона</label>
+                <div class="col-12">
+                    <input asp-for="phone" class="form-control" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Адрес</label>
+                <div class="col-12">
+                    <input asp-for="adress" class="form-control" />
+                    <span asp-validation-for="adress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <div class="col-12">
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+            </div>
+            <input class="btn btn-success"  type="submit" value="Завершить заказ" />
+            <p></p>
+        </form>
+    </div>

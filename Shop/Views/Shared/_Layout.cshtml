@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light background-color: #E6E6FA">
+                <a class="navbar-brand" title="Интернет магазин EllTan.by" href="https://localhost:44331"><b>byEllTan</b></a>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link " href="https://localhost:44331/Books/Index">
+                        Каталог
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link " href="">
+                        Контакты
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link " href="https://localhost:44331/Edit/AllEdit">
+                        Администрирование
+                    </a>
+                </div>
+
+                <a href="/ShopCart/Index" class="navbar-text ml-auto">
+                    <i class="fa fa-shopping-cart nav-color"></i>
+                </a>
+                <div class="dropdown ml-4 nav-color">
+                    <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="~/img/avatar.jpg" width="30" alt="User" class="rounded" />
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+        <div class="footer-container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>© @DateTime.Now.Year EllTan, Inc.</p>
+        </div>
+            </div>
+    </footer>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

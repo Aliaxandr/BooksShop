@@ -1,0 +1,28 @@
+﻿@model BooksWriterViewsModels
+
+<h1>Писатели</h1>
+<a class="btn btn-info" asp-action="NewWriter" asp-controller="Edit" >Добавить</a>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Писатель</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var el in Model.allBooksWriter)
+        {
+        <tr>
+            <th>@el.id</th>
+            <th>@el.name</th>
+            <td>
+                <a class="btn btn-success" 
+                   asp-route-id="@el.id" asp-action="ChangeWriter"><i class="fa fa-edit"></i></a>
+                <a class="btn btn-outline-danger" asp-action="DeleteWriter"
+                   asp-route-id="@el.id"><i class="fa fa-close"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

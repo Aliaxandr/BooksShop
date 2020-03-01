@@ -1,0 +1,37 @@
+﻿@model BooksListViewsModels
+<h1>Книги</h1>
+<a class="btn btn-info" asp-action="NewBook" asp-controller="Edit">Добавить</a>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Навзание книги</th>       
+            <th>Цена</th>
+            <th>Главная страница</th>
+            <th>Доступность</th>
+            <th>Писатель</th>
+            <th>Категория</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var el in Model.allBooks)
+        {            
+            <tr>
+                <th>@el.id</th>
+                <th>@el.name</th>                
+                <th>@el.price</th>
+                <th>@el.isFavourite</th>
+                <th>@el.available</th>
+                <th>@el.Writer.name</th>
+                <th>@el.Category.name</th>
+                <td>
+                    <a class="btn btn-success" 
+                       asp-route-id="@el.id" asp-action="ChangeBook"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-outline-danger" asp-action="DeleteBook"
+                       asp-route-id="@el.id"><i class="fa fa-close"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
